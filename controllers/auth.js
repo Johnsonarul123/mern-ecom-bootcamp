@@ -4,8 +4,9 @@ var jwt = require("jsonwebtoken");
 var expressJwt = require("express-jwt");
 
 exports.signup = (req, res) => {
+  
   const errors = validationResult(req);
-
+  
   if (!errors.isEmpty()) {
     return res.status(422).json({
       error: errors.array()[0].msg
@@ -27,8 +28,15 @@ exports.signup = (req, res) => {
   });
 };
 
+// exports.signup= (req,res) =>{
+//   console.log("REQ BODY", req.body);
+//   res.json({
+//     message:"signup route works"
+//   });
+// };
 exports.signin = (req, res) => {
   const errors = validationResult(req);
+  // extracting email and password using destructuring.
   const { email, password } = req.body;
 
   if (!errors.isEmpty()) {
