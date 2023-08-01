@@ -35,7 +35,7 @@ exports.createProduct = (req, res) => {
         error: "Please include all fields"
       });
     }
-
+    
     let product = new Product(fields);
 
     //handle file here
@@ -48,7 +48,7 @@ exports.createProduct = (req, res) => {
       product.photo.data = fs.readFileSync(file.photo.path);
       product.photo.contentType = file.photo.type;
     }
-    // console.log(product);
+    console.log(product);
 
     //save to the DB
     product.save((err, product) => {

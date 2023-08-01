@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-// import { API } from "../backend";
+import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { getProducts } from "./helper/coreapicalls";
@@ -9,6 +9,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
   console.log("API IS",process.env.REACT_APP_BACKEND);
+  console.log(process.env.REACT_APP_BACKEND)
   const loadAllProduct = () => {
     getProducts().then(data => {
       if (data.error) {
