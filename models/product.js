@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema(
     },
     category: {
       type: ObjectId,
-      ref: "Category",
+      ref: "Category",   // pulling things from 
       required: true
     },
     stock: {
