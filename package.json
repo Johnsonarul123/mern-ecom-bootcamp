@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "node app.js",
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
@@ -25,8 +26,5 @@
     "morgan": "^1.9.1",
     "npm": "^9.6.5",
     "uuid": "^3.3.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }
